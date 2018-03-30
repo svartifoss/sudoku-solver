@@ -12,17 +12,17 @@ public class DeterministicCellFill<T> implements CellFill<T> {
     }
 
     @Override
-    public Grid<T> apply() {
-        return new Grid<>(cell.getGrid(), cell, value);
+    public Sudoku<T> apply() {
+        return new Sudoku<>(cell.getSudoku(), cell, value);
     }
 
     @Override
-    public Grid<T> revert() {
-        return cell.getGrid();
+    public Sudoku<T> revert() {
+        return cell.getSudoku();
     }
 
     @Override
-    public boolean isNonDeterministic() {
+    public boolean isTrial() {
         return false;
     }
 }
